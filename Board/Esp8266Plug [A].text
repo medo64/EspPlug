@@ -1,0 +1,31 @@
+Esp8266Plug
+===========
+
+27 x 17 mm ~ 0.8 sqin
+
+
+Parts
+-----
+
+|  # | Part name                        | RefDes  | DigiKey                    |
+|---:|----------------------------------|---------|----------------------------|
+|  1 | C 10nF /16V NP0 (0805)           | C1      | 1276-2984-1-ND             |
+|  2 | C 100nF, X7R (0805)              | C2 C3   | 399-1170-1-ND              |
+|  1 | C 4.7uF /16V X5R (0805)          | C4      | 1276-1065-1-ND             |
+|  1 | DS LED (0805)                    | DS1     | 475-1415-1-ND              |
+|  1 | J Socket 2x4                     | J1      | S7072-ND                   |
+|  1 | L Ferrite 40Ohm (0805)           | L1      | 445-2201-1-ND              |
+|  1 | P USB A, plug, horizontal        | P1      | WM17118-ND                 |
+|  1 | R 330 0.125W (0805)              | R1      | RMCF0805FT330RCT-ND        |
+|  1 | R 10K, 0.125W (0805)             | R2      | RMCF0805JT10K0CT-ND        |
+|  1 | U FT232RL (SSOP-28)              | U1      | 768-1007-1-ND              |
+
+Optionally: 1/2" heat-shrink tubing, 25mm
+
+
+Serial port
+-----------
+
+Parameters for serial port are 115200,8,N,1.
+
+RTS has to be enabled.
