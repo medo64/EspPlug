@@ -1,0 +1,5 @@
+Esp8266Plug
+===========
+
+This board is intended to allow direct interfacing between ESP8266 modules and
+your computer via the USB serial port.
