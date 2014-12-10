@@ -1,7 +1,7 @@
 Esp8266Plug
 ===========
 
-27 x 17 mm ~ 0.8 sqin
+31 x 17 mm ~ 0.9 sqin
 
 
 Parts
@@ -11,14 +11,14 @@ Parts
 |---:|----------------------------------|---------|----------------------------|
 |  1 | C 10nF /16V NP0 (0805)           | C1      | 1276-2984-1-ND             |
 |  2 | C 100nF, X7R (0805)              | C2 C3   | 399-1170-1-ND              |
-|  1 | C 4.7uF /16V X5R (0805)          | C4      | 1276-1065-1-ND             |
-|  1 | DS LED (0805)                    | DS1     | 475-1415-1-ND              |
+|  2 | C 4.7uF /16V X5R (0805)          | C4 C5   | 1276-1065-1-ND             |
+|  2 | DS LED (0805)                    | DS1 DS2 | 475-1415-1-ND              |
 |  1 | J Socket 2x4                     | J1      | S7072-ND                   |
 |  1 | L Ferrite 40Ohm (0805)           | L1      | 445-2201-1-ND              |
 |  1 | P USB A, plug, horizontal        | P1      | WM17118-ND                 |
-|  1 | R 330 0.125W (0805)              | R1      | RMCF0805FT330RCT-ND        |
-|  1 | R 10K, 0.125W (0805)             | R2      | RMCF0805JT10K0CT-ND        |
+|  4 | R 1K, 0.125W (0805)              | R1-R4   | RMCF0805FT1K00CT-ND        |
 |  1 | U FT232RL (SSOP-28)              | U1      | 768-1007-1-ND              |
+|  1 | VR MCP1700 (SOT-23)              | VR1     | MCP1700T3302ETTCT-ND       |
 
 Optionally: 1/2" heat-shrink tubing, 25mm
 
