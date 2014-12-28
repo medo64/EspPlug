@@ -21,7 +21,19 @@ Parts
 |  1 | U FT232RL (SSOP-28)              | U1      | 768-1007-1-ND              |
 |  1 | VR MCP1700 (SOT-23)              | VR1     | MCP1700T3302ETTCT-ND       |
 
-Optionally: 1/2" heat-shrink tubing, 25mm
+Optionally: 1/2" heat-shrink tubing, 28mm
+
+
+Jumpers
+-------
+
+JP1 and JP2 control whether GP0 pin of ESP8266 module. At most one jumper
+should be soldered at any time. If connected to GND, ESP8266 module will enter
+firmware update mode every time it is plugged in. If GP0 is connected to DTR#,
+firmware update can be programmatically controlled; i.e. when DTR is high,
+firmware update will be enabled and when DTR is low, normal operation will
+proceed. Both these jumpers can be left disconnected if no firmware upgrade
+functionality is needed.
 
 
 Serial port
