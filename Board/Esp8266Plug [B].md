@@ -1,11 +1,9 @@
-Esp8266Plug
-===========
+### EspPlug ###
 
 31 x 17 mm ~ 0.9 sqin
 
 
-Parts
------
+#### Parts ####
 
 |  # | Part name                        | RefDes  | DigiKey                    |
 |---:|----------------------------------|---------|----------------------------|
@@ -26,8 +24,7 @@ Parts
 Optionally: 1/2" heat-shrink tubing, 28mm
 
 
-Jumpers
--------
+#### Jumpers ####
 
 JP1 and JP2 control whether GP0 pin of ESP8266 module. At most one jumper
 should be soldered at any time. If connected to GND, ESP8266 module will enter
@@ -38,7 +35,6 @@ proceed. Both these jumpers can be left disconnected if no firmware upgrade
 functionality is needed.
 
 
-Serial port
------------
+#### Serial port ####
 
 Parameters for serial port are 115200,8,N,1.

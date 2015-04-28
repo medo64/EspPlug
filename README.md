@@ -1,19 +1,18 @@
-Esp8266Plug
-===========
+### Esp8266Plug ###
 
 This board is intended to allow direct interfacing between ESP8266 modules and
 your computer via the USB serial port.
 
+![EspPlug, revision A board](Wiki/Picture.jpg)
 
-Serial parameters
------------------
+
+#### Serial parameters ####
 
 Default module settings are `9600,N,8,1` for older firmware versions and
 `115200,N,8,1` for newer.
 
 
-Jumpers
--------
+#### Jumpers ####
 
 JP1 and JP2 on the bottom of the board control GP0 pin of ESP8266 module. At
 most one jumper should be soldered at any time. If connected to GND, ESP8266
@@ -24,24 +23,23 @@ operation will proceed. Both these jumpers can be left disconnected if firmware
 upgrade functionality is not needed.
 
 
-Commands
---------
+#### Commands ####
 
 All commands have prefix AT and have to end with <CR><LF>.
 
 
-### AT ###
+##### AT #####
 
 Replies with OK.
 
-#### Example ####
+###### Example ######
 
     AT
 
     OK
 
 
-### ATE`state` ###
+##### ATE`state` #####
 
 Turn character echoing off (`0`) or on (`1`).
 
@@ -51,18 +49,18 @@ Echo will be turned on by default and every time device is reset.
   * `0` - Echo off
   * `1` - Echo on
 
-#### Example ####
+###### Example ######
 
     ATE0
 
     OK
 
 
-### AT+RST ###
+##### AT+RST #####
 
 Reset the module.
 
-#### Example ####
+###### Example ######
 
     AT+RST
 
@@ -73,11 +71,11 @@ Reset the module.
     ready
 
 
-### AT+GMR ###
+##### AT+GMR #####
 
 Shows the firmware version.
 
-#### Example ####
+###### Example ######
 
     AT+GMR
     0018000902-AI03
@@ -85,7 +83,7 @@ Shows the firmware version.
     OK
 
 
-### AT+CIUPDATE ###
+##### AT+CIUPDATE #####
 
 Upgrades the firmware from cloud. Must be connected as client to access point
 with Internet access. Upgrade itself takes couple of minutes.
@@ -97,7 +95,7 @@ needed (exposed on board's bottom as jumper link). Alternative firmwares and
 tools can be found on [Electrodragon Documentation](https://drive.google.com/folderview?id=0B3dUKfqzZnlwRXhBTmlhaTROTmM&usp=sharing)
 page.
 
-#### Example ####
+###### Example ######
 
     AT+CIUPDATE
     +CIPUPDATE:1
@@ -125,11 +123,11 @@ page.
     ready
 
 
-### AT+CIOBAUD=`rate` ###
+##### AT+CIOBAUD=`rate` #####
 
 Changes baud rate.
 
-#### Example ####
+###### Example ######
 
     AT+CIOBAUD=115200
     BAUD->115200
@@ -137,14 +135,14 @@ Changes baud rate.
     OK
 
 
-### AT+CIOBAUD? ###
+##### AT+CIOBAUD? #####
 
 Shows current baud rate.
 
 Result is given as:
 > +CIOBAUD:`rate`
 
-#### Example ####
+###### Example ######
 
     AT+CIOBAUD?
     +CIOBAUD:9600
@@ -152,7 +150,7 @@ Result is given as:
     OK
 
 
-### AT+CWMODE=`mode` ###
+##### AT+CWMODE=`mode` #####
 
 Changes the mode to one specified after the command.
 
@@ -161,14 +159,14 @@ Changes the mode to one specified after the command.
   * `2` - Access point
   * `3` - Both client and access point
 
-#### Example ####
+###### Example ######
 
     AT+CWMODE=1
 
     OK
 
 
-### AT+CWMODE? ###
+##### AT+CWMODE? #####
 
 Read current mode.
 
@@ -180,7 +178,7 @@ Result is given as:
   * `2` - Access point
   * `3` - Both client and access point
 
-#### Example ####
+###### Example ######
 
     AT+CWMODE?
     +CWMODE:1
@@ -188,7 +186,7 @@ Result is given as:
     OK
 
 
-### AT+CWLAP ###
+##### AT+CWLAP #####
 
 Shows visible networks. Only valid in client modes (`1` and `3`).
 
@@ -202,7 +200,7 @@ Results are given as multiple lines each formatted as:
   * `3` - WPA
   * `4` - WPA2
 
-#### Example ####
+###### Example ######
 
     AT+CWLAP
     +CWLAP:(3,"DIRECT-roku-374-F9AA61",-57,"40:a7:37:e0:32:a5",1)
@@ -227,19 +225,19 @@ Results are given as multiple lines each formatted as:
     OK
 
 
-### AT+CWJAP ###
+##### AT+CWJAP #####
 
 Join the network giving the SSID and password. Both should be enclosed in
 quotes.
 
-#### Example ####
+###### Example ######
 
     AT+CWJAP="Polaris","SomePassword"
 
     OK
 
 
-### AT+CWJAP? ###
+##### AT+CWJAP? #####
 
 Shows joined network.
 
@@ -247,25 +245,25 @@ Result is given as:
 > +CWJAP:"`ssid`"
 
 
-#### Example ####
+###### Example ######
 
     AT+CWJAP?
     +CWJAP:"Polaris"
 
     OK
 
-### AT+CWQAP ###
+##### AT+CWQAP #####
 
 Disconnects client from network.
 
-#### Example ####
+###### Example ######
 
     AT+CWQAP
 
     OK
 
 
-### AT+CWSAP="`ssid`","`password`",`channel`,`security` ###
+##### AT+CWSAP="`ssid`","`password`",`channel`,`security` #####
 
 Set access point parameters. Valid only in AP modes (`2` and `3`).
 
@@ -277,19 +275,19 @@ Set access point parameters. Valid only in AP modes (`2` and `3`).
   * `3` - WPA
   * `4`  WPA2
 
-#### Example ####
+###### Example ######
 
 AT+CWSAP="Test","Password",1,0
 
 
-### AT+CWSAP? ###
+##### AT+CWSAP? #####
 
 Returns current access point parameters.
 
 Result is given as:
 > +CWSAP:"`ssid`","`password`",`channel`,`security`
 
-#### Example ####
+###### Example ######
 
     AT+CWSAP?
     +CWSAP:"ESP_9CB4F7","",1,0
@@ -297,21 +295,21 @@ Result is given as:
     OK
 
 
-### AT+CWLIF ###
+##### AT+CWLIF #####
 
 Show access point clients.
 
 Result is given as:
 > `ip`,`mac`
 
-#### Example ####
+###### Example ######
 
     AT+CWLIF
     192.168.4.100,ac:f8:ae:51:89:07
 
     OK
 
-### AT+CIFSR ###
+##### AT+CIFSR #####
 
 Gives module IP address. First address given will be address in access point
 mode (`2` or `3`) while second address will be one used in client mode (`1` or
@@ -320,7 +318,7 @@ mode (`2` or `3`) while second address will be one used in client mode (`1` or
 Results are given as list of:
 > `ip`
 
-#### Example ####
+###### Example ######
 
     AT+CIFSR
     192.168.4.1
@@ -329,13 +327,13 @@ Results are given as list of:
     OK
 
 
-### AT+CIFSR (newer) ###
+##### AT+CIFSR (newer) #####
 
 Returns IP address assigned to module in following format:
 > +CIFSR:STAIP,"`ip`"
 > +CIFSR:STAMAC,"`mac`"
 
-#### Example ####
+###### Example ######
 
     AT+CIFSR
     +CIFSR:STAIP,"192.168.200.126"
@@ -344,7 +342,7 @@ Returns IP address assigned to module in following format:
     OK
 
 
-### AT+CIPMUX=`multi` ###
+##### AT+CIPMUX=`multi` #####
 
 Sets whether multiple connections are to be used.
 
@@ -352,14 +350,14 @@ Sets whether multiple connections are to be used.
   * `0` - Single connection only
   * `1` - Multiple connections enabled
 
-#### Example ####
+###### Example ######
 
     AT+CIPMUX=1
 
     OK
 
 
-### AT+CIPMUX? ###
+##### AT+CIPMUX? #####
 
 Returns whether multiple connections are supported.
 
@@ -370,13 +368,13 @@ Results are given as:
   * `0` - Single connection only
   * `1` - Multiple connections enabled
 
-#### Example ####
+###### Example ######
 
     AT+CIPMUX?
     +CIPMUX:0
 
 
-### AT+CIPSTATUS ###
+##### AT+CIPSTATUS #####
 
 Returns the status of the connection.
 
@@ -391,7 +389,7 @@ For client connection results are:
   * `2` - Listening
   * `4` - Disconnected
 
-#### Example ####
+###### Example ######
 
     AT+CIPSTATUS
     STATUS:4
@@ -401,7 +399,7 @@ For client connection results are:
     OK
 
 
-### AT+CIPSTART="`protocol`",`ip`,`port` ###
+##### AT+CIPSTART="`protocol`",`ip`,`port` #####
 
 Starts TCP or UDP connection in single connection mode.
 
@@ -409,7 +407,7 @@ Starts TCP or UDP connection in single connection mode.
   * `UDP` - User Datagram Protocol
   * `TCP` - Transmission Control Protocol
 
-#### Example (UDP) ####
+###### Example (UDP) ######
 
     AT+CIPSTART="UDP","192.168.1.119",514
     0,CONNECT
@@ -417,7 +415,7 @@ Starts TCP or UDP connection in single connection mode.
     OK
 
 
-#### Example (TCP) ####
+###### Example (TCP) ######
 
     AT+CIPSTART="TCP","192.168.1.119",80
     0,CONNECT
@@ -425,7 +423,7 @@ Starts TCP or UDP connection in single connection mode.
     OK
 
     
-### AT+CIPSTART=`id`,"`protocol`",`ip`,`port` ###
+##### AT+CIPSTART=`id`,"`protocol`",`ip`,`port` #####
 
 Starts TCP or UDP connection in multiplexed mode.
 
@@ -433,7 +431,7 @@ Starts TCP or UDP connection in multiplexed mode.
   * `UDP` - User Datagram Protocol
   * `TCP` - Transmission Control Protocol
 
-#### Example ####
+###### Example ######
 
     AT+CIPSTART=0,"UDP","192.168.1.119",514
     0,CONNECT
@@ -441,39 +439,39 @@ Starts TCP or UDP connection in multiplexed mode.
     OK
 
 
-### AT+CIPSEND=`count` ###
+##### AT+CIPSEND=`count` #####
 
 Sends number of characters over the connection.
 
 Given characters can be inputed only after prompt (`>`) and command
 automatically completes as soon as enough characters are received.
 
-### Example ###
+##### Example #####
 
     AT+CIPSEND=26
     > ABCDEFGHIJKLMNOPQRSTUVWXYZ
     SEND OK
 
     
-### AT+CIPSEND=`id`,`count` ###
+##### AT+CIPSEND=`id`,`count` #####
 
 Sends number of characters over the multiplexed connection.
 
 Given characters can be inputed only after prompt (`>`) and command
 automatically completes as soon as enough characters are received.
 
-### Example ###
+##### Example #####
 
     AT+CIPSEND=1,26
     > ABCDEFGHIJKLMNOPQRSTUVWXYZ
     SEND OK
 
 
-### AT+CIPCLOSE ###
+##### AT+CIPCLOSE #####
 
 Closes the connection.
 
-#### Example ####
+###### Example ######
 
     AT+CIPCLOSE
     CLOSED
@@ -481,11 +479,11 @@ Closes the connection.
     OK
 
     
-### AT+CIPCLOSE=`id` ###
+##### AT+CIPCLOSE=`id` #####
 
 Closes the connection in multiplexed mode.
 
-#### Example ####
+###### Example ######
 
     AT+CIPCLOSE=3
     3,CLOSED
@@ -493,48 +491,48 @@ Closes the connection in multiplexed mode.
     OK
 
 
-### AT+CIPSERVER=`1`,`port` ###
+##### AT+CIPSERVER=`1`,`port` #####
 
 Starts TCP server on a given port. Multiplex mode must be turned on.
 
-#### Example ####
+###### Example ######
 
     AT+CIPSERVER=1,514
 
     OK
 
 
-### AT+CIPSERVER=`0` ###
+##### AT+CIPSERVER=`0` #####
 
 Closes TCP server connection. Module reset is needed after it.
 
-#### Example ####
+###### Example ######
 
     AT+CIPSERVER=0
     we must restart
 
 
-### AT+CIPSTO=`timeout` ###
+##### AT+CIPSTO=`timeout` #####
 
 Sets server's connection timeout value. Value can only be set while server is
 listening.
 
 
-#### Example ####
+###### Example ######
 
     AT+CIPSTO=120
 
     OK
 
 
-### AT+CIPSTO? ###
+##### AT+CIPSTO? #####
 
 Returns currently set server timeout value.
 
 Format is as follows:
 > +CIPSTO:`timeout`
 
-#### Example ####
+###### Example ######
 
     AT+CIPSTO?
     +CIPSTO:180
@@ -542,7 +540,7 @@ Format is as follows:
     OK
 
 
-### `id`,`state` ###
+##### `id`,`state` #####
 
 This is an unsolicited output that gets received every time there is a change
 on server connection.
@@ -551,12 +549,12 @@ on server connection.
   * `CONNECT` - Connection established
   * `CLOSED` - Connection closed
 
-#### Example ####
+###### Example ######
 
     0,CONNECT
 
 
-### +IPD ###
+##### +IPD #####
 
 This is an unsolicited output that gets received every time server receives
 data.
@@ -564,7 +562,19 @@ data.
 Format:
 > +IPD,`id`,`count`:`data`
 
-#### Example ####
+###### Example ######
 
     +IPD,0,26:ABCDEFGHIJKLMNOPQRSTUVWXYZ
     OK
+
+    
+#### Schematics ####
+
+![EspPlug, revision a schematics](Wiki/Schema.png)
+
+
+#### Manufacturing ####
+
+If you want to make this board your self, just [grab the latest gerbers](http://www.jmedved.com/releases/espplug/)
+and send it over to [OSH Park](http://oshpark.com/) (or any other PCB
+manufacturer of your choice).
