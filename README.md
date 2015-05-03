@@ -1,4 +1,4 @@
-### Esp8266Plug ###
+### EspPlug ###
 
 This board is intended to allow direct interfacing between ESP8266 modules and
 your computer via the USB serial port.
@@ -575,6 +575,6 @@ Format:
 
 #### Manufacturing ####
 
-If you want to make this board your self, just [grab the latest gerbers](http://www.jmedved.com/releases/espplug/)
-and send it over to [OSH Park](http://oshpark.com/) (or any other PCB
-manufacturer of your choice).
+If you want to make this board your self, just grab the latest gerbers and send
+them over to [OSH Park](http://oshpark.com/) (or any other PCB manufacturer of
+your choice).
