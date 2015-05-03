@@ -578,3 +578,9 @@ Format:
 If you want to make this board your self, just grab the latest gerbers and send
 them over to [OSH Park](http://oshpark.com/) (or any other PCB manufacturer of
 your choice).
+
+
+
+---
+
+*You can check my blog and other projects at [www.jmedved.com](http://www.jmedved.com/).*
